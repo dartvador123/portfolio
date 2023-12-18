@@ -1,0 +1,49 @@
+//Scroll-snap-type property is set on container element to work on y-axis.
+//The scroll-behavior property specifies whether to smoothly animate the scroll position, instead of a straight jump
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+//100vh represents the full height of the viewport, regardless of the content on the page
+//scroll-snap-align means snap an element to its center when being scrolled inside a snap container.
+section{
+  height: 100vh;
+  scroll-snap-align: center;
+}
+//box-sizing tells property to specify whether the padding or border of the element should be included in the height and width or not.
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+body{
+  background-color: #0c0c1d; 
+  color: lightgray;
+}
+
+a{
+  color: inherit; //get color from parent 
+  text-decoration: none; //will remove underline of text
+}
+
+
+@mixin mobile{
+  @media (max-width: 750px){
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (max-width: 1024px){
+    @content;
+  }
+}
+
+@mixin desktop{
+  @media (max-width: 1366px){
+    @content;
+  }
+}
+
